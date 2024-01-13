@@ -1,1 +1,30 @@
-<h1>Home</h1>
+<div class="train">
+    <h1 class="train__heading">Train Booker</h1>
+    <p class="train__body">Welcome to the train booking system</p>
+  </div>
+  
+  <img src="/img/train.jpg" alt="train" class="train-image" width="981" height="528">
+  
+  <section class="trainInfo">
+    <h2 class="trainInfo__heading">Booking info</h2>
+  
+    <ul class="trainInfo-ul">
+
+        <% data.forEach(post => { %>
+            <li>
+                <a href="<%= post._id %>">
+                    <span><%= post.startLocation %></span>
+                    <span class="booking-list__date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+
+       
+     </ul>
+
+     <% if (nextPage !== null) { %>
+        <a href="?page=<%= nextPage %>" class="pagination">&lt; View Other Listings</a>
+     <% } %> 
+    
+  
+  </section>

@@ -60,21 +60,25 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
-/*router.get('/post/:id', async (req, res) => {
+//post serach terms
+router.post('/search', async (req, res) => {
     try{
         const locals = {
-            title:"Train Booker",
-            description:"A simple train booking system.",
+            title: "Search",
+            description:"A simple train booking system."
         }
 
-        let slug = req.params.id;
+        let searchTerm = req.body.searchTerm;
 
-        const data = await Post.findById({_id: slug});
-        res.render('post', {locals, data});
-    }catch(error) {
+        console.log(searchTerm)
+
+        //const data = await Post.find();
+        res.send(searchTerm);
+    } catch(error) {
         console.log(error);
     }
-});*/
+    
+})
 
 
 router.get('/about', (req, res) => {
@@ -109,8 +113,17 @@ Post.insertMany([
         platformNumber:"1",
         carriageNumber:"4",
         extraNotes:"luggage"
+    },
+    {
+        startLocation: "exeter central",
+        endLocation: "plymouth city centre",
+        trainTime:"1120",
+        platformNumber:"4",
+        carriageNumber:"5",
+        extraNotes:"baby on board"
     }
 ])
 }
 insertPostData();*/
+
 

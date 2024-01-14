@@ -22,11 +22,15 @@ const PostSchema = new Schema({
     type: Number,
   },
 
+  extraNotes: {
+    type: String,
+  },
+
   createdAt: {
     type: Date,
     default:Date.now
   },
-  
+
   updatedAt: {
     type: Date,
     default:Date.now

@@ -38,6 +38,44 @@ router.get('', async (req, res) => {
     }
 });
 
+//GET route by passing ID
+/**
+ * GET /
+ * Post :id
+ */
+
+router.get('/post/:id', async (req, res) => {
+    try{
+        const locals = {
+            title:"Train Booker",
+            description:"A simple train booking system",
+        }
+
+        let slug = req.params.id;
+
+        const data = await Post.findById({_id: slug});
+        res.render('post', {locals, data});
+    }catch(error) {
+        console.log(error);
+    }
+});
+
+/*router.get('/post/:id', async (req, res) => {
+    try{
+        const locals = {
+            title:"Train Booker",
+            description:"A simple train booking system.",
+        }
+
+        let slug = req.params.id;
+
+        const data = await Post.findById({_id: slug});
+        res.render('post', {locals, data});
+    }catch(error) {
+        console.log(error);
+    }
+});*/
+
 
 router.get('/about', (req, res) => {
     res.render('about');
@@ -53,21 +91,24 @@ Post.insertMany([
         endLocation: "Plymouth",
         trainTime:"1550",
         platformNumber:"5",
-        carriageNumber:"2"
+        carriageNumber:"2",
+        extraNotes:"bike booking"
     },
     {
         startLocation: "Plymouth",
         endLocation: "Reading",
         trainTime:"1225",
         platformNumber:"3",
-        carriageNumber:"7"
+        carriageNumber:"7",
+        extraNotes:""
     },
     {
         startLocation: "Exeter",
         endLocation: "London",
         trainTime:"1830",
         platformNumber:"1",
-        carriageNumber:"4"
+        carriageNumber:"4",
+        extraNotes:"luggage"
     }
 ])
 }

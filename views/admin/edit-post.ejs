@@ -1,0 +1,33 @@
+<a href="/dashboard">&larr; Back</a>
+<div class="admin-title">
+  <h2>View / Edit Post</h2>
+
+  <form action="/delete-post/<%= data._id %>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete" class="btn-delete btn">
+  </form>
+
+</div>
+
+<form action="/edit-post/<%= data._id %>?_method=PUT" method="POST">
+
+  <label for="Start"><b>Start Location</b></label>
+  <input type="text" placeholder="Start" name="Start" value="<%= data.startLocation%>">
+
+  <label for="Destination"><b>Destination</b></label>
+  <input type="text" placeholder="Destination" name="Destination" value="<%= data.endLocation %>">
+
+  <label for="Departure"><b>Train departure (time in hh:mm)</b></label>
+  <input type="text" placeholder="Departure" name="Departure" value="<%= data.trainTime %>">
+
+  <label for="Platform"><b>Platform number</b></label>
+  <input type="text" placeholder="Platform Number " name="Platform" value="<%= data.platformNumber %>"> 
+  
+  <label for="Carriage"><b>Carriage number</b></label>
+  <input type="text" placeholder="Carriage Number" name="Carriage" value="<%= data.carriageNumber %>">
+
+  <label for="Notes"><b>Notes (optional)</b></label>
+  <input type="text" placeholder="Notes" name="Notes" value="<%= data.extraNotes %>">
+
+  <input type="submit" value="Update" class="btn">
+
+</form>

@@ -1,0 +1,29 @@
+<a href="/dashboard">&larr; Bacl</a>
+<div class="admin-title">
+  <h2>Add new booking</h2>
+</div>
+
+<form action="/add-post" method="POST">
+
+  <label for="Start"><b>Start Location</b></label>
+  <input type="text" placeholder="Start" name="Start">
+
+  <label for="Destination"><b>Destination</b></label>
+  <input type="text" placeholder="Destination" name="Destination">
+
+  <label for="Departure"><b>Train departure (time in hh:mm)</b></label>
+  <input type="text" placeholder="Departure" name="Departure">
+
+  <label for="Platform"><b>Platform number</b></label>
+  <input type="text" placeholder="Platform Number " name="Platform">
+  
+  <label for="Carriage"><b>Carriage number</b></label>
+  <input type="text" placeholder="Carriage Number" name="Carriage">
+
+  <label for="Notes"><b>Notes (optional)</b></label>
+  <input type="text" placeholder="Notes" name="Notes">
+
+
+  <input type="submit" value="Add" class="btn">
+
+</form>
